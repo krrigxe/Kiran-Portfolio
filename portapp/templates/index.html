@@ -1,0 +1,1147 @@
+{% load static %}
+<!DOCTYPE html>
+ <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+      
+        <title>Portfolioof-Kiran Krishnan</title>
+        <meta content="" name="description">
+        <meta content="" name="keywords">
+        <link rel="stylesheet" href="path/to/boxicons/css/boxicons.min.css"> <!-- Include Boxicons CSS -->
+      
+        <!-- Favicons -->
+        <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+        <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+      
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Satisfy" rel="stylesheet">
+      
+        <!-- Vendor CSS Files -->
+        <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+        <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+        <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+        <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css'%}" rel="stylesheet">
+        <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+      
+        <!-- Template Main CSS File -->
+        <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+      
+       
+     
+        <style>
+            body {
+                font-family: "Open Sans", sans-serif;
+                color: #444444;
+              }
+              
+              a {
+                color: #ffb727;
+                text-decoration: none;
+              }
+              
+              a:hover {
+                color: #ffc85a;
+                text-decoration: none;
+              }
+              
+              h1,
+              h2,
+              h3,
+              h4,
+              h5,
+              h6 {
+                font-family: "Raleway", sans-serif;
+              }
+              
+              /*--------------------------------------------------------------
+              # Back to top button
+              --------------------------------------------------------------*/
+              .back-to-top {
+                position: fixed;
+                visibility: hidden;
+                opacity: 0;
+                right: 15px;
+                bottom: 15px;
+                z-index: 996;
+                background: #ffb727;
+                width: 40px;
+                height: 40px;
+                border-radius: 4px;
+                transition: all 0.4s;
+              }
+              
+              .back-to-top i {
+                font-size: 28px;
+                color: #fff;
+                line-height: 0;
+              }
+              
+              .back-to-top:hover {
+                background: #ffc550;
+                color: #fff;
+              }
+              
+              .back-to-top.active {
+                visibility: visible;
+                opacity: 1;
+              }
+              
+              /*--------------------------------------------------------------
+              # Header
+              --------------------------------------------------------------*/
+              #header {
+                z-index: 997;
+                transition: all 0.5s;
+                height: 80px;
+                background: rgba(25, 28, 31, 0.8);
+              }
+              
+              #header.header-transparent {
+                background: transparent;
+              }
+              
+              #header.header-scrolled {
+                height: 60px;
+                background: rgba(25, 28, 31, 0.8);
+              }
+              
+              /*--------------------------------------------------------------
+              # Navigation Menu
+              --------------------------------------------------------------*/
+              /**
+              * Desktop Navigation 
+              */
+              .navbar {
+                padding: 0;
+              }
+              
+              .navbar ul {
+                margin: 0;
+                padding: 0;
+                display: flex;
+                list-style: none;
+                align-items: center;
+              }
+              
+              .navbar li {
+                position: relative;
+              }
+              .navbar li div {
+                position: relative;
+                padding-left:20px;
+              }
+              
+              .navbar a,
+              .navbar a:focus {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 10px 15px;
+                color: #fff;
+                white-space: nowrap;
+                transition: 0.3s;
+                font-size: 12px;
+                font-family: "Raleway", sans-serif;
+                text-transform: uppercase;
+                font-weight: 600;
+                letter-spacing: 1px;
+              }
+              
+              .navbar a i,
+              .navbar a:focus i {
+                font-size: 12px;
+                line-height: 0;
+                margin-left: 5px;
+              }
+              
+              .navbar a:hover,
+              .navbar .active,
+              .navbar .active:focus,
+              .navbar li:hover>a {
+                color: #ffb727;
+              }
+              
+              .navbar .dropdown ul {
+                display: block;
+                position: absolute;
+                left: 14px;
+                top: calc(100% + 30px);
+                margin: 0;
+                padding: 10px 0;
+                z-index: 99;
+                opacity: 0;
+                visibility: hidden;
+                background: #fff;
+                box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+                transition: 0.3s;
+                border-radius: 4px;
+              }
+              
+              .navbar .dropdown ul li {
+                min-width: 200px;
+              }
+              .navbar .dropdown ul li div {
+                min-width: 200px;
+              }
+              
+              .navbar .dropdown ul a {
+                padding: 10px 20px;
+                font-size: 14px;
+                text-transform: none;
+                font-weight: 400;
+                color: #3b434a;
+                letter-spacing: 1px;
+              }
+              
+              .navbar .dropdown ul a i {
+                font-size: 12px;
+              }
+              
+              .navbar .dropdown ul a:hover,
+              .navbar .dropdown ul .active:hover,
+              .navbar .dropdown ul li:hover>a {
+                color: #ffb727;
+              }
+              
+              .navbar .dropdown:hover>ul {
+                opacity: 1;
+                top: 100%;
+                visibility: visible;
+              }
+              
+              .navbar .dropdown .dropdown ul {
+                top: 0;
+                left: calc(100% - 30px);
+                visibility: hidden;
+              }
+              
+              .navbar .dropdown .dropdown:hover>ul {
+                opacity: 1;
+                top: 0;
+                left: 100%;
+                visibility: visible;
+              }
+              
+              @media (max-width: 1366px) {
+                .navbar .dropdown .dropdown ul {
+                  left: -90%;
+                }
+              
+                .navbar .dropdown .dropdown:hover>ul {
+                  left: -100%;
+                }
+              }
+              
+              /**
+              * Mobile Navigation 
+              */
+              .mobile-nav-toggle {
+                color: #fff;
+                font-size: 28px;
+                cursor: pointer;
+                display: none;
+                line-height: 0;
+                transition: 0.5s;
+              }
+              
+              @media (max-width: 991px) {
+                .mobile-nav-toggle {
+                  display: block;
+                }
+              
+                .navbar ul {
+                  display: none;
+                }
+              }
+              
+              .navbar-mobile {
+                position: fixed;
+                overflow: hidden;
+                top: 0;
+                right: 0;
+                left: 0;
+                bottom: 0;
+                background: rgba(36, 41, 46, 0.9);
+                transition: 0.3s;
+                z-index: 999;
+              }
+              
+              .navbar-mobile .mobile-nav-toggle {
+                position: absolute;
+                top: 15px;
+                right: 15px;
+              }
+              
+              .navbar-mobile ul {
+                display: block;
+                position: absolute;
+                top: 55px;
+                right: 15px;
+                bottom: 15px;
+                left: 15px;
+                padding: 10px 0;
+                border-radius: 10px;
+                background-color: #fff;
+                overflow-y: auto;
+                transition: 0.3s;
+              }
+              
+              .navbar-mobile a,
+              .navbar-mobile a:focus {
+                padding: 10px 20px;
+                font-size: 14px;
+                color: #3b434a;
+              }
+              
+              .navbar-mobile a:hover,
+              .navbar-mobile .active,
+              .navbar-mobile li:hover>a {
+                color: #ffb727;
+              }
+              
+              .navbar-mobile .getstarted,
+              .navbar-mobile .getstarted:focus {
+                margin: 15px;
+              }
+              
+              .navbar-mobile .dropdown ul {
+                position: static;
+                display: none;
+                margin: 10px 20px;
+                padding: 10px 0;
+                z-index: 99;
+                opacity: 1;
+                visibility: visible;
+                background: #fff;
+                box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+              }
+              
+              .navbar-mobile .dropdown ul li {
+                min-width: 200px;
+              }
+              
+              .navbar-mobile .dropdown ul a {
+                padding: 10px 20px;
+              }
+              
+              .navbar-mobile .dropdown ul a i {
+                font-size: 12px;
+              }
+              
+              .navbar-mobile .dropdown ul a:hover,
+              .navbar-mobile .dropdown ul .active:hover,
+              .navbar-mobile .dropdown ul li:hover>a {
+                color: #ffb727;
+              }
+              
+              .navbar-mobile .dropdown>.dropdown-active {
+                display: block;
+              }
+              .navbar-mobile .dropdown ul li [data-theme="dark"] {
+                background-color: #333;
+                color: #fff;
+              }
+              .resume .section-title {
+                font-size: 16px;
+                font-weight: 700;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                color: #3b434a;
+              }
+              
+              .resume .resume-item {
+                padding: 0 0 20px 20px;
+                margin-top: -2px;
+                border-left: 2px solid #82909c;
+                position: relative;
+              }
+              
+              .resume .resume-item h4 {
+                line-height: 18px;
+                font-size: 16px;
+                font-weight: 700;
+                text-transform: uppercase;
+                color: #ffb727;
+                margin-bottom: 10px;
+              }
+              
+              .resume .resume-item h5 {
+                font-size: 16px;
+                background: #eef0f2;
+                padding: 5px 15px;
+                display: inline-block;
+                font-weight: 600;
+                margin-bottom: 10px;
+              }
+              
+              .resume .resume-item ul {
+                padding-left: 20px;
+              }
+              
+              .resume .resume-item ul li {
+                padding-bottom: 10px;
+              }
+              
+              .resume .resume-item:last-child {
+                padding-bottom: 0;
+              }
+              
+              .resume .resume-item::before {
+                content: "";
+                position: absolute;
+                width: 16px;
+                height: 16px;
+                border-radius: 50px;
+                left: -9px;
+                top: 0;
+                background: #fff;
+                border: 2px solid #82909c;
+              }
+              @media (max-width: 375px) {
+                #resume p {
+                  text-align: justify;
+                  margin: 5px; /* Reset margin */
+                  padding: 5px; /* Reset padding */
+                  font-size: 14px; /* Adjust as needed */
+                  
+                }
+              }
+              .portfolio #portfolio-flters {
+                list-style: none;
+                margin-bottom: 20px;
+              }
+              
+              .portfolio #portfolio-flters li {
+                cursor: pointer;
+                display: inline-block;
+                margin: 0 10px 10px 10px;
+                font-size: 15px;
+                font-weight: 600;
+                line-height: 1;
+                padding: 7px 10px;
+                text-transform: uppercase;
+                color: #444444;
+                transition: all 0.3s ease-in-out;
+                border: 2px solid #fff;
+              }
+              
+              .portfolio #portfolio-flters li:hover,
+              .portfolio #portfolio-flters li.filter-active {
+                color: #f3a200;
+                border-color: #ffb727;
+              }
+              
+              .portfolio .portfolio-item {
+                margin-bottom: 30px;
+              }
+              
+              .portfolio .portfolio-item .portfolio-img {
+                overflow: hidden;
+              }
+              
+              .portfolio .portfolio-item .portfolio-img img {
+                transition: all 0.8s ease-in-out;
+              }
+              
+              .portfolio .portfolio-item .portfolio-info {
+                opacity: 0;
+                position: absolute;
+                left: 15px;
+                bottom: 0;
+                z-index: 3;
+                right: 15px;
+                transition: all ease-in-out 0.3s;
+                background: rgba(0, 0, 0, 0.5);
+                padding: 10px 15px;
+              }
+              
+              .portfolio .portfolio-item .portfolio-info h4 {
+                font-size: 18px;
+                color: #fff;
+                font-weight: 600;
+                color: #fff;
+                margin-bottom: 0px;
+              }
+              
+              .portfolio .portfolio-item .portfolio-info p {
+                color: rgba(255, 255, 255, 0.8);
+                font-size: 14px;
+                margin-bottom: 0;
+              }
+              
+              .portfolio .portfolio-item .portfolio-info .preview-link,
+              .portfolio .portfolio-item .portfolio-info .details-link {
+                position: absolute;
+                right: 40px;
+                font-size: 24px;
+                top: calc(50% - 18px);
+                color: #fff;
+                transition: 0.3s;
+              }
+              
+              .portfolio .portfolio-item .portfolio-info .preview-link:hover,
+              .portfolio .portfolio-item .portfolio-info .details-link:hover {
+                color: #ffc041;
+              }
+              
+              .portfolio .portfolio-item .portfolio-info .details-link {
+                right: 10px;
+              }
+              
+              .portfolio .portfolio-item:hover .portfolio-img img {
+                transform: scale(1.2);
+              }
+              
+              .portfolio .portfolio-item:hover .portfolio-info {
+                opacity: 1;
+              }
+              .portfolio-details {
+                padding-top: 40px;
+              }
+              
+              .portfolio-details .portfolio-details-slider img {
+                width: 100%;
+              }
+              
+              .portfolio-details .portfolio-details-slider .swiper-pagination {
+                margin-top: 20px;
+                position: relative;
+              }
+              
+              .portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
+                width: 12px;
+                height: 12px;
+                background-color: #fff;
+                opacity: 1;
+                border: 1px solid #ffb727;
+              }
+              
+              .portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
+                background-color: #ffb727;
+              }
+              
+              .portfolio-details .portfolio-info {
+                padding: 30px;
+                box-shadow: 0px 0 30px rgba(59, 67, 74, 0.08);
+              }
+              
+              .portfolio-details .portfolio-info h3 {
+                font-size: 22px;
+                font-weight: 700;
+                margin-bottom: 20px;
+                padding-bottom: 20px;
+                border-bottom: 1px solid #eee;
+              }
+              
+              .portfolio-details .portfolio-info ul {
+                list-style: none;
+                padding: 0;
+                font-size: 15px;
+              }
+              
+              .portfolio-details .portfolio-info ul li+li {
+                margin-top: 10px;
+              }
+              
+              .portfolio-details .portfolio-description {
+                padding-top: 30px;
+              }
+              
+              .portfolio-details .portfolio-description h2 {
+                font-size: 26px;
+                font-weight: 700;
+                margin-bottom: 20px;
+              }
+              
+              .portfolio-details .portfolio-description p {
+                padding: 0;
+              }
+              #hero {
+                width: 100%;
+                height: 100vh;
+                background: url("{% static 'images/KiranKrishnan-01.jpg' %}")  right no-repeat;
+                background-size: cover;
+                position: relative;
+                backgroun-color:#6c757d;
+                box-shadow: 0 0 20px rgba(1, 0, 0, 1.5);
+                opacity: 1;
+              }
+             
+              
+              
+              #hero:before {
+                content: "";
+                background: rgba(0, 0, 0, 0.5);
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5)
+                position: absolute;
+                bottom: 0;
+                top: 0;
+                left: 0;
+                right: 0;
+              }
+              
+              #hero .hero-container {
+                position: absolute;
+                bottom: 0;
+                top: 0;
+                left: 0;
+                right: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                padding: 0 15px;
+              }
+              
+              #hero h1 {
+                margin: 0 0 10px 0;
+                font-size: 64px;
+                font-family: "Satisfy", serif;
+                color: #fff;
+              }
+              
+              #hero h2 {
+                color: #eee;
+                margin-bottom: 50px;
+                font-size: 13px;
+                font-weight: 500;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+              }
+              
+              #hero .btn-scroll {
+                transition: 0.4s;
+                color: rgba(255, 255, 255, 0.6);
+                animation: up-down 1s ease-in-out infinite alternate-reverse both;
+              }
+              #hero p {
+                color:white;
+                margin: 15px 0 0 0;
+                font-size: 26px;
+                font-family: "Poppins", sans-serif;
+              }
+              
+              #hero p span {
+                color: #ffb727;
+                letter-spacing: 1px;
+              }
+              
+              
+              #hero .btn-scroll i {
+                font-size: 48px;
+              }
+              
+              #hero .btn-scroll:hover {
+                color: #ffb727;
+              }
+              #hero .social-links a {
+                font-size: 24px;
+                display: inline-block;
+                color: white;
+                line-height: 1;
+                margin-right: 20px;
+                transition: 0.3s;
+              }
+              
+              #hero .social-links a:hover {
+                color: #ffb727;
+              }
+              
+              
+              @media (min-width: 1024px) {
+                #hero {
+                  background-attachment: fixed;
+                 
+
+                }
+              }
+              @media (max-width: 475px) {
+                #hero  {
+                  background-size: cover;
+
+                  background-position: center center;
+                 
+                }
+              }
+              @media (max-width: 475px) {
+                #hero h1 {
+                  font-size: 40px;
+                 
+                 
+                }
+                
+              
+                #hero h2 {
+                  text-align: center;
+                  margin-bottom: 30px;
+
+                }
+                #hero p{
+                  font-size: 20px;
+
+                }
+                #hero button{
+                 height:60px;
+                 width:110px;
+                 font-size:15px;
+
+                }
+              }
+              
+              @keyframes up-down {
+                0% {
+                  transform: translateY(5px);
+                }
+              
+                100% {
+                  transform: translateY(-5px);
+                }
+              }
+              .button {
+                display: inline-block;
+                border-radius: 4px;
+                background-color:none;
+                border: 1px solid white;
+                color: White;
+                text-align: center;
+                font-size: 23px;
+                padding: 20px;
+                width: 180px;
+                transition: all 0.5s;
+                cursor: pointer;
+                margin: 5px;
+               
+              }
+              
+              .button span {
+                cursor: pointer;
+                display: inline-block;
+                position: relative;
+                transition: 0.5s;
+              }
+              
+              .button span:after {
+                content: '\00bb';
+                position: absolute;
+                opacity: 0;
+                top: 0;
+                right: -20px;
+                transition: 0.5s;
+                font-size: 30px;
+                margin-top:-6.5px;
+              }
+              
+              .button:hover span {
+               
+                padding-right: 25px;
+              }
+              .button:hover {
+                border: 1px solid #ffb727;
+                color: #ffb727;
+              }
+              
+              
+              .button:hover span:after {
+                opacity: 1;
+                right: 0;
+              }
+              #footer {
+                background: #f7f8f9;
+                color: #45505b;
+                font-size: 14px;
+                text-align: center;
+                padding: 30px 0;
+              }
+              #footer {
+                background: url("{% static 'images/gamedeveloper.jpg' %}") top center no-repeat;
+                background-size: cover;
+                color: #fff;
+                font-size: 14px;
+                text-align: center;
+                padding: 80px 0;
+                position: relative;
+              }
+              
+              #footer::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.6);
+              }
+              
+              #footer .container {
+                position: relative;
+              }
+              
+              #footer h3 {
+                font-size: 36px;
+                font-weight: 700;
+                color: #fff;
+                position: relative;
+                font-family: "Satisfy", serif;
+                padding: 0;
+                margin: 0 0 15px 0;
+              }
+              
+              #footer p {
+                font-size: 15;
+                font-style: italic;
+                padding: 0;
+                margin: 0 0 40px 0;
+              }
+              
+              #footer .social-links {
+                margin: 0 0 40px 0;
+              }
+              
+              #footer .social-links a {
+                font-size: 18px;
+                display: inline-block;
+                background: #ffb727;
+                color: #fff;
+                line-height: 1;
+                padding: 8px 0;
+                margin-right: 4px;
+                border-radius: 50%;
+                text-align: center;
+                width: 36px;
+                height: 36px;
+                transition: 0.3s;
+              }
+              
+              #footer .social-links a:hover {
+                background: #f3a200;
+                color: #fff;
+                text-decoration: none;
+              }
+              
+              #footer .copyright {
+                margin: 0 0 5px 0;
+              }
+              
+              #footer .credits {
+                font-size: 13px;
+              }
+              [data-theme="dark"] {
+                background-color: #333;
+                color: #fff;
+            }
+            [data-theme="dark"] h1{
+              
+              color: #fff;
+          }
+          [data-theme="dark"] #resume .section-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            color: white;
+          }
+          [data-theme="dark"] #resume .section-title::after span {
+            color: #eef0f2;
+        }
+          [data-theme="dark"] #resume .section-title h2 {
+            
+            color: #ffb727;
+           
+            
+          }
+          [data-theme="dark"] #portfolio .section-title h2 {
+            
+            color: #ffb727;
+           
+            
+          }
+        
+        </style>
+    </head>
+    <body>
+        <header id="header" class="fixed-top d-flex justify-content-center align-items-center header-transparent">
+
+            <nav id="navbar" class="navbar">
+              <ul>
+                <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+               
+                <li><a class="nav-link scrollto" href="#resume">About Me</a></li>
+              
+                <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
+                <li><div id="dark-mode-toggle"><i id="mode-icon" class="fa fa-sharp fa-light fa-moon" style="color:#ffb727;"></i></div></li>
+               
+                {% comment %} <li><a class="nav-link scrollto" href="#contact">Contact</a></li> {% endcomment %}
+              </ul>
+              <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        
+        </header>
+        <section id="hero">
+            <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
+              <h1 style="margin-top:130px;">Kiran Krishnan</h1>
+              <p>I'm <span class="typed" data-typed-items="Game Developer,Unity Developer,Photographer"></span></p>
+              <a href="#resume" class="btn-scroll scrollto" title="Scroll Down" ><i class="bx bx-chevron-down" ></i></a>
+              <button type="button"  id="composeButton"  class="btn btn-scroll scrollto  button" style="vertical-align:middle; margin-top:35px;" ><span>Hire Me</span></button>
+              <div class="social-links" style="margin-top:40px;">
+                <a href="https://twitter.com/KiranKr80649914" class="twitter"><i class="bx bxl-twitter" style="font-size:24px;"></i></a>
+                <a href="https://www.facebook.com/kiran.krishnan.7169709/" class="facebook"><i class="bx bxl-facebook" style="font-size:24px;"></i></a>
+                <a href="https://www.instagram.com/krrigxe/?next=%2F" class="instagram"><i class="bx bxl-instagram" style="font-size:24px;"></i></a>
+                <a href="tel:+91 8086502400" class="whatsapp"><i class="bx bxl-whatsapp" style="font-size:24px;"></i></a>
+                <a href="https://www.linkedin.com/in/kiran-krishnan-abb145273/" class="linkedin"><i class="bx bxl-linkedin" style="font-size:24px;"></i></a>
+              </div>
+            </div>
+          </section><!-- End Hero -->
+        
+          <main id="main">
+        
+          
+            <section id="resume" class="resume">
+                <div class="container">
+          
+                  <div class="section-title">
+                    <span>About Me</span>
+                    <h2>About Me</h2>
+                    <p>As a dynamic and highly proficient Game Developer, I seamlessly merge technical prowess with effective communication strategies, ensuring optimal program performance through collaborative client engagement. My journey as a self-taught game maestro and coding enthusiast began in the wild days of my childhood, where my fascination with games evolved into a relentless pursuit of understanding the magic behind them. 🚀</p>
+                    <p>Driven by an insatiable passion for innovation, I thrive in resolving a spectrum of issues swiftly, unlocking my full potential within the dynamic realm of game development. Specializing in Unity and C#, I've woven my coding magic into over 10 projects, effortlessly navigating between 2D and 3D worlds. From the spark of curiosity to the creation of mind-blowing experiences, my game dev journey epitomizes the fusion of creativity and technical excellence. 👇</p>
+                    <p>Join me in the madness of my projects below and let's keep the game on while unleashing the wild side of code! 🎮🤪</p>
+                  </div>
+                  <center><a href="https://drive.google.com/file/d/1A982RjUevfswOXVhdUjS-Y6AN-FiPicv/view?usp=drivesdk"><img src="{% static 'images/Picsart.png' %}" alt="Resume" style="width:250px;height:170px;" ></a></center>
+                    
+                    </div>
+                  </div>
+          
+                </div>
+              </section>
+              <section id="portfolio" class="portfolio">
+                <div class="container">
+          
+                  <div class="section-title">
+                    <span>My Portfolio</span>
+                    <h2>My Portfolio</h2>
+                    <p></p>
+                  </div>
+          
+                  <ul id="portfolio-flters" class="d-flex justify-content-center">
+                    <li data-filter="*" class="filter-active">Games</li>
+                    <li data-filter=".filter-app">3D</li>
+                    <li data-filter=".filter-card">2D</li>
+                  </ul>
+          
+                  <div class="row portfolio-container">
+          
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                      <div class="portfolio-img"><img src="{% static 'images/MediaPlayer.png' %}" class="img-fluid" alt=""></div>
+                      <div class="portfolio-info">
+                        <h4>Qube Runner</h4>
+                        <p>3D Platform Game</p>
+                        <a href="https://www.linkedin.com/posts/kiran-krishnan-abb145273_gamedevelopment-quberunner-indiegameinnovation-activity-7146441592340365312-fxtY?utm_source=share&utm_medium=member_desktop" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link"></a>
+                        <a href="https://www.linkedin.com/posts/kiran-krishnan-abb145273_gamedevelopment-quberunner-indiegameinnovation-activity-7146441592340365312-fxtY?utm_source=share&utm_medium=member_desktop" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                      </div>
+                    </div>
+                    
+          
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                      <div class="portfolio-img"><img src="{% static 'images/game1.png' %}" class="img-fluid" alt=""></div>
+                      <div class="portfolio-info">
+                        <h4>Mission 2050</h4>
+                        <p>Third Person Shooting </p>
+                        <a href="https://www.linkedin.com/posts/kiran-krishnan-abb145273_unitygamedev-gamedevelopment-indiegamedev-activity-7146446939100725248-TbkU?utm_source=share&utm_medium=member_desktop" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" ></a>
+                        <a href="https://www.linkedin.com/posts/kiran-krishnan-abb145273_unitygamedev-gamedevelopment-indiegamedev-activity-7146446939100725248-TbkU?utm_source=share&utm_medium=member_desktop" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                      </div>
+                    </div>
+          
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                      <div class="portfolio-img"><img src="{% static 'images/game2.png' %}" class="img-fluid" alt=""></div>
+                      <div class="portfolio-info">
+                        <h4>Endless Runner</h4>
+                        <p>3D Platform Game</p>
+                        <a href="https://www.linkedin.com/posts/kiran-krishnan-abb145273_gamedevelopment-unitygameengine-endlessrunner-activity-7146443993306832896-IhXn?utm_source=share&utm_medium=member_desktop" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link"></a>
+                        <a href="https://www.linkedin.com/posts/kiran-krishnan-abb145273_gamedevelopment-unitygameengine-endlessrunner-activity-7146443993306832896-IhXn?utm_source=share&utm_medium=member_desktop" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                      </div>
+                    </div>
+          
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                      <div class="portfolio-img"><img src="{% static 'images/game3.png' %}" class="img-fluid" alt=""></div>
+                      <div class="portfolio-info">
+                        <h4>The Great Warrior</h4>
+                        <p>2D Platform Game</p>
+                        <a href="https://www.linkedin.com/posts/kiran-krishnan-abb145273_unity-gamedesign-indiedev-activity-7146449929215881216-hw_Z?utm_source=share&utm_medium=member_desktop" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" ></a>
+                        <a href="https://www.linkedin.com/posts/kiran-krishnan-abb145273_unity-gamedesign-indiedev-activity-7146449929215881216-hw_Z?utm_source=share&utm_medium=member_desktop" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                      </div>
+                    </div>
+          
+                    <div class="col-lg-4 col-md-6 portfolio-item  filter-app">
+                      <div class="portfolio-img"><img src="{% static 'images/game4.png' %}" class="img-fluid" alt=""></div>
+                      <div class="portfolio-info">
+                        <h4>Car Parking Simulator</h4>
+                        <p>Parking Simulator Game</p>
+                        <a href="https://www.linkedin.com/posts/kiran-krishnan-abb145273_myparking-unitygamedev-gamingjourney-activity-7146448346369437696--bwm?utm_source=share&utm_medium=member_desktop" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link"></i></a>
+                        <a href="https://www.linkedin.com/posts/kiran-krishnan-abb145273_myparking-unitygamedev-gamingjourney-activity-7146448346369437696--bwm?utm_source=share&utm_medium=member_desktop" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                      </div>
+                    </div>
+          
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                      <div class="portfolio-img"><img src="{% static 'images/game5.png' %}" class="img-fluid" alt=""></div>
+                      <div class="portfolio-info">
+                        <h4>Brick Breaker</h4>
+                        <p>2D platform Game</p>
+                        <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link"></a>
+                        <a href="https://www.linkedin.com/posts/kiran-krishnan-abb145273_unity-unitydeveloper-gamedev-activity-7146443114080026624-CAN8?utm_source=share&utm_medium=member_desktop" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                      </div>
+                    </div>
+          
+                   
+          
+                  </div>
+          
+                </div>
+              </section>
+              <footer id="footer">
+                <div class="container">
+                  <h3>Kiran Krishnan</h3>
+                
+                  <div class="social-links">
+                    <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                    <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                    <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                    <a href="#" class="google-plus"><i class="bx bxl-whatsapp"></i></a>
+                    <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                  </div>
+                  <div class="copyright">
+                    &copy; Copyright <strong><span>Keerthana</span></strong>. All Rights Reserved
+                  </div>
+                  <div class="credits">
+             
+                  </div>
+                </div>
+              </footer>
+
+              <div id="preloader"></div>
+              <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+            
+
+  <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/waypoints/noframework.waypoints.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+
+  <script>
+    document.getElementById('composeButton').addEventListener('click', function() {
+      // Replace the placeholder values with your actual values
+      var to = 'kirankrishnan2k16@gmail.com';
+      var subject = '';
+      var body = '';
+    
+      // Create the compose URL
+      var composeUrl = 'https://mail.google.com/mail/?view=cm&to=' + encodeURIComponent(to) + '&su=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    
+      // Open the compose window
+      window.open(composeUrl, '_blank');
+    });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const typed = document.querySelector('.typed');
+        if (typed) {
+          let typed_strings = typed.getAttribute('data-typed-items');
+          typed_strings = typed_strings.split(',');
+      
+          new Typed('.typed', {
+            strings: typed_strings,
+            loop: true,
+            typeSpeed: 100,
+            backSpeed: 50,
+            backDelay: 2000
+          });
+        }
+      });
+      
+    
+    </script>
+    <script>
+      let preloader = select('#preloader');
+      if (preloader) {
+        window.addEventListener('load', () => {
+          preloader.remove()
+        });
+      }
+    </script>
+    <script>
+      const typed = select('.typed')
+      if (typed) {
+        let typed_strings = typed.getAttribute('data-typed-items')
+        typed_strings = typed_strings.split(',')
+        new Typed('.typed', {
+          strings: typed_strings,
+          loop: true,
+          typeSpeed: 100,
+          backSpeed: 50,
+          backDelay: 2000
+        });
+      }
+    
+    </script>
+   
+    <script>
+      window.onload = function () {
+          const darkModeToggle = document.getElementById('dark-mode-toggle');
+          const body = document.body;
+
+          darkModeToggle.addEventListener('click', () => {
+              const currentTheme = body.getAttribute('data-theme');
+              const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+
+              body.setAttribute('data-theme', newTheme);
+
+              // Call a function to update styles based on the new theme
+              updateStyles(newTheme);
+          });
+
+          function updateStyles(theme) {
+              const span = document.querySelector('[data-theme="dark"] #resume .section-title span');
+
+              if (theme === 'dark') {
+                  // Change the color to #eef0f2 when in dark mode
+                  span.style.color = '#eef0f2';
+              } else {
+                  // Reset to default color in light mode (if needed)
+                  span.style.color = ''; // or 'inherit'
+              }
+          }
+      };
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const darkModeToggle = document.getElementById("dark-mode-toggle");
+        const modeIcon = document.getElementById("mode-icon");
+      
+        darkModeToggle.addEventListener("click", function() {
+          // Toggle dark/light mode class on body or any other container element
+          document.body.classList.toggle("dark-mode");
+      
+          // Toggle between moon and sun icons based on the current mode
+          if (document.body.classList.contains("dark-mode")) {
+            modeIcon.classList.remove("fa-light", "fa-sun");
+            modeIcon.classList.add("fa-moon");
+          } else {
+            modeIcon.classList.remove("fa-moon");
+            modeIcon.classList.add("fa-light", "fa-sun");
+          }
+        });
+      });
+    </script>
+  
+    </body>
+ </html>
